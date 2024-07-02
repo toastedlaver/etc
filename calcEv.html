@@ -330,15 +330,15 @@
 
 	  // 本体
 	  const div = getChartDiv(); // Step 分割数 (1 段を何分割するか。 i.e. 3 なら 1/3 段ずつ増加)
-	  for (let num = 0; num <= 20 * div; num++) // 0 〜 20 段まで出す
+	  for (let num = 0; num <= 20 * div; num++) // 0 〜 20 段まで出す。 num += 1/div だと誤差が出るので後で割る
 	  {
-		  let step = Math.floor(num / div) + (num % div); // step += 1/div だと誤差が出るので…
+		  let step = num / div;
 		  let row = chart.insertRow(-1);
 		  let cell = row.insertCell(-1);
-		  cell.appendChild(document.createTextNode(step));
+		  cell.appendChild(document.createTextNode(round(step,2)));
 		  cell = row.insertCell(-1);
 		  let value = step * getAccuracy(); // 精度補正
-		  cell.appendChild(document.createTextNode(value));
+		  cell.appendChild(document.createTextNode(round(value, 2)));
 		  cell = row.insertCell(-1);
 		  cell.appendChild(document.createTextNode(getF(value)));
 		  cell = row.insertCell(-1);
