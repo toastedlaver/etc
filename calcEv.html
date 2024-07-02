@@ -240,10 +240,7 @@
 
   function getAv(f)
   {
-	  // log 関数の底は e で固定なので EXCEL 関数で言うと「LOG(f, 2^0.5) = LOG(f, e) / LOG(2^0.5, e)」の変換をしている
-	  let v = Math.log(f) / Math.log(2 ** 0.5); // 丸め誤差が出るので
-	  const dig = 10 ** 15;						// とりあえず四捨五入しておく
-	  v = Math.round(v * dig) / dig;			// 桁指定できないので…
+	  let v = logarithm(2 ** 0.5, f);
 	  return v * getAccuracy();
   }
 
@@ -281,7 +278,7 @@
 
   function calcTv(t)
   {
-	  return Math.log2(1/t); // 精度の補正は外でやる
+	  return logarithm(2, 1/t); // 精度の補正は外でやる
   }
 
   function getIso(sv)
@@ -292,13 +289,12 @@
 
   function getSv(iso)
   {
-	  return Math.log2(iso/100) * getAccuracy();
+	  return logarithm(2, iso/100) * getAccuracy();
   }
 
   function getAccuracy()
   {
 	  let selectAccuracy = document.getElementById('selectAccuracy');
-	  console.log(selectAccuracy.elements['accuracy'].value);
 	  return selectAccuracy.elements['accuracy'].value;
   }
 
@@ -356,5 +352,39 @@
   {
 	  let selectDiv = document.getElementById('selectDiv');
 	  return selectDiv.elements['chartDiv'].value;
+  }
+
+  // Math.round 関数は桁指定できないので桁指定できる関数を作成
+  // Math.ceil (切り上げ) / Math.floor (切り捨て) は…また別の機会にw
+  function round(number, num_digits)
+  {
+	  // num_digits が正なら小数点以下の桁、負なら整数部分で四捨五入 ★EXCEL の ROUND と同じ仕様です
+	  // round(123.456, 2) → 123.46
+	  // round(123.456, 0) → 123
+	  // round(123.456, -1) → 120
+	  const digits = 10 ** num_digits; // とりあえず四捨五入しておく
+	  return Math.round(number * digits) / digits; // 桁指定できないので…
+  }
+
+  // Math.log 関数は底 e で固定なので底を指定できる関数を作成
+  function logarithm(base, antilogarithm)
+  {
+	  if (base == 2)
+	  {
+		  return Math.log2(antilogarithm);
+	  }
+	  else if (base == 10)
+	  {
+		  return Math.log10(antilogarithm);
+	  }
+	  else if (base != Math.exp())
+	  {
+		  // 丸め誤差が出るので四捨五入しておく
+		  return round(Math.log(antilogarithm) / Math.log(base), 14); // ウチの環境では 15 桁までしか出ない
+	  }
+	  else
+	  {
+		  return Math.log(antilogarithm)
+	  }
   }
 </script>
