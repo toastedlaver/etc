@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+	<meta charset="UTF-8">
+	<meta name="author" content="ozawa">
+	<title>枠を書く。ただそれだけ。</title>
+  </head>
+  <body>
+	<h1>キャンバスサイズ</h1>
+	<label>横<input type="number" id="Width" value="320"></label>
+	<label>縦<input type="number" id="Height" value="240"></label>
+	<canvas id="GORORI">ここに枠を描きます</canvas>
+  </body>
+</html>
+<script>
+  const frame_indicator = 2;
+  const frame_line = 1;
+  const style_frame = "#888888";
+  const margin = frame_indicator + frame_line;
+  const style_waku1_fill = "#CC8800";
+  const style_waku1_stroke = "#884400";
+
+  const gorori = document.getElementById('GORORI');
+
+  window.onload = () => {
+	  const w = document.getElementById('Width');
+	  const h = document.getElementById('Height');
+	  gorori.width = w.value;
+	  gorori.height = h.value;
+
+	  drawFrame();
+  };
+
+  function drawFrame() {
+	  
+  }
+</script>
