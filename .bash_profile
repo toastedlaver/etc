@@ -14,10 +14,10 @@ export LANG=ja_JP.UTF-8
 #export LANG=ja_JP.SJIS
 #export LANG=ja_JP.EUC
 
-### 共通設定 #########################################
-export EDITOR=win-emacsclient
+### 共通設定
+export EDITOR=emc
 
-### bashrc を読み込む ################################
+### bashrc を読み込む
 if [ -f "${HOME}/.bashrc" ] ; then
   source "${HOME}/.bashrc"
 fi

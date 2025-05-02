@@ -2,7 +2,11 @@
 ## bash 環境設定ファイル (主に MSYS 用)
 ## bash を起動する際に読み込まれる (ログインはもちろん、例えば emacs 上で shell-mode を起動した時にも)
 
-### Alias ########################################
+## 設定
+#MYEMACS="~/AppData/Local/emacs"
+MYEMACS="/c/Program\ Files/Emacs/emacs-30.1"
+
+## Alias
 alias ls="ls -F --color=auto --show-control-chars"
 alias la="ls -aF"
 alias ll="ls -lF"
@@ -10,13 +14,15 @@ alias l="ls -laF"
 alias rm="rm -i"
 alias cp="cp -i"
 alias mv="mv -i"
-alias em="/c/Program\ Files/Emacs/emacs-29.1/bin/emacs.exe"
-alias emclient="/c/Program\ Files/Emacs/emacs-29.1/bin/emacsclient.exe"
+alias em="${MYEMACS}/bin/runemacs.exe"
+alias emc="${MYEMACS}/bin/emacsclientw.exe"
 
-### Prompt #######################################
 ## 通常使用prompt
 PS1="\[\e[01;31m\][\u@\H \W]\$ \[\e[00m\]"
 
+## エスケープシーケンスでプロンプト中に端末の制御シーケンスを埋め込むことについてのメモ
+#\[ エスケープシーケンスを開始する
+#\] エスケープシーケンスを終了する
 #\a ASCIIのベル文字（07）を表示する（ビープ音を鳴らす）
 #\d 「曜 日 月 日」の形式（例：Fri Jan 5）で日付を表示する
 #\e ASCIIのエスケープ文字（033）を表示する
@@ -38,8 +44,6 @@ PS1="\[\e[01;31m\][\u@\H \W]\$ \[\e[00m\]"
 #\$ 実効UIDが0の場合に#となり、それ以外の場合に$となる
 #\nnn 8進数nnnに対応する文字を表示する
 #\\ バックスラッシュを表示する
-#\[ 非表示文字のシーケンスを開始する。これを使って、プロンプト中に端末の制御シーケンスを埋め込むことができる
-#\] 非表示文字のシーケンスを終了する
 #
 # \e[xx<;xx<;xx>...>m
 #    00 … (初期状態へ、理解しない端末もある)
