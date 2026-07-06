@@ -38,6 +38,7 @@
   ----------
   ```
 - 結果
+
   文章
 
   ----------
@@ -56,6 +57,7 @@
   ```
 
 - 結果
+
   文章1
   文章2
 
@@ -76,6 +78,7 @@
   <small>文章3の後にスペース2つがある</small>
 
 - 結果
+
   文章1
   文章2
   文章3  
@@ -125,6 +128,7 @@
   _イタリック2_
   ```
 - 結果
+
   *イタリック1*
   _イタリック2_
 
@@ -135,6 +139,7 @@
   __太字2__
   ```
 - 結果
+
   **太字**
   __太字2__
 
@@ -145,6 +150,7 @@
   ___両方2___
   ```
 - 結果
+
   ***両方***
   ___両方2___
 
@@ -155,6 +161,7 @@
   <u>下線</u>
   ```
 - 結果
+
   <u>下線</u>
 
 ## 打ち消し線
@@ -164,6 +171,7 @@
   ~~打ち消し~~
   ```
 - 結果
+
   ~~打ち消し~~
 
 ## エスケープ
@@ -174,6 +182,7 @@
   \*エスケープしているのでイタリックになりません\*
   ```
 - 結果
+
   \*エスケープしているのでイタリックになりません\*
 
 ### `\` をエスケープする場合
@@ -182,6 +191,7 @@
   \\バックスラッシュを表示\\
   ```
 - 結果
+
   \\バックスラッシュを表示\\
 
 ## リンク
@@ -192,6 +202,7 @@
   https://www.google.com
   ```
 - 結果
+
   https://www.google.com
 
 ### URL を `<>` で囲む
@@ -200,6 +211,7 @@
   <https://www.google.com>
   ```
 - 結果
+
   <https://www.google.com>
 
 リンク名 <small>*org-mode と逆なんだよなぁ…。*</small>
@@ -210,6 +222,7 @@
   [Google](https://www.google.com)
   ```
 - 結果
+
   [Google](https://www.google.com)
 
 ### タイトル (リンクにマウスを乗せた時に表示)
@@ -218,6 +231,7 @@
   [こちら](https://www.google.com "ググレカス")
   ```
 - 結果
+
   [こちら](https://www.google.com "ググレカス")
 
 ### リンク定義
@@ -228,6 +242,7 @@
   検索してね→ [Google]
   ```
 - 結果
+
   [Google]:https://www.google.com
   検索してね→ [Google]
 
@@ -238,6 +253,7 @@
   ![AltMessage](https://www.google.com/logos/doodles/2026/world-cup-2026-the-art-of-the-sliding-tackle-71-6753651837111289-law.gif)
   ```
 - 結果
+
   ![AltMessage](https://www.google.com/logos/doodles/2026/world-cup-2026-the-art-of-the-sliding-tackle-71-6753651837111289-law.gif)
 
 ## 引用
@@ -307,12 +323,13 @@
 - テキスト
   ```
   `codespan`
-  バッククォート1つ… `` ` ``
+  バッククォート1つ… `` ` ``  
   バッククォート3つ… ````` ``` `````
   ```
 - 結果
+
   `codespan`
-  バッククォート1つ… `` ` ``
+  バッククォート1つ… `` ` ``  
   バッククォート3つ… ````` ``` `````
 
 ## コードブロック
@@ -458,18 +475,18 @@
 ## HTMLタグ
 HTML を記述することもできる…が、沢山あるので一例のみ
 ```
-<small>小さく</small>なっちゃった
-<u>下線</u>
-改<br>行
-<span style="color: tomato">トマト</span>
-<span style="color: #00ff00">緑</span>
+<small>小さく</small>なっちゃった  
+<u>下線</u>  
+改<br>行  
+<span style="color: tomato">トマト</span>  
+<span style="color: #00ff00">緑</span>  
 <span style="color: #0000ff">ブルー</span>
 ```
-<small>小さく</small>なっちゃった
-<u>下線</u>
-改<br>行
-<span style="color: tomato">トマト</span>
-<span style="color: #00ff00">緑</span>
+<small>小さく</small>なっちゃった  
+<u>下線</u>  
+改<br>行  
+<span style="color: tomato">トマト</span>  
+<span style="color: #00ff00">緑</span>  
 <span style="color: #0000ff">ブルー</span>
 
 ブロックタグ内の文字markdownが適用されるかどうかは[この辺り](https://www.tohoho-web.com/ex/markdown.html#html)が詳しい

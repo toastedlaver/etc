@@ -80,6 +80,7 @@ graph LR
 ```mermaid
 graph LR
     node-id1 --> node-id2[alias] -.-> node-id3["[]❤"]
+    %%改行もできる
     node-id4[line1
         line2
         line3]
@@ -88,6 +89,7 @@ graph LR
 ```mermaid
 graph LR
     node-id1 --> node-id2[alias] -.-> node-id3["[]❤"]
+    %%改行もできる
     node-id4[line1
         line2
         line3]
@@ -358,6 +360,7 @@ graph TB
 
 ## シーケンス図
 <https://mermaid.ai/open-source/syntax/sequenceDiagram.html>
+
 冒頭 `sequenceDiagram` で開始
 ~~~
 ```mermaid
